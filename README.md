@@ -8,6 +8,9 @@ Train Speed Controller Readme file-ja
  * kontroller
  * felhasználó
 
+# Merge conflict
+konfliktus
+
 # Train Speed Controller
 
 This is a sample application for the verification laboratory.
