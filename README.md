@@ -8,6 +8,9 @@ Train Speed Controller Readme file-ja
  * kontroller
  * felhasználó
 
+# Merge conflict
+Ez a sor konfliktust fog kiváltani.
+
 # Train Speed Controller
 
 This is a sample application for the verification laboratory.
