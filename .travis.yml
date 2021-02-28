@@ -1,1 +1,9 @@
-.travis.yml fájl tartalma
+language: java
+install: skip
+
+os: linux
+dist: trustly
+jdk: oraclejdk8
+
+script:
+ - ./gradlew build --scan -s
