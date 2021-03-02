@@ -1,17 +1,17 @@
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Tachograph {
 
-    private Table<LocalDate,Integer,Integer> tachoData;
+    private Table<LocalDateTime,Integer,Integer> tachoData;
 
     public Tachograph() {
         tachoData = HashBasedTable.create();
     }
 
-    public void addData(LocalDate date,Integer pos,Integer speed) {
+    public void addData(LocalDateTime date, Integer pos, Integer speed) {
 
         tachoData.put(date,pos,speed);
     }
