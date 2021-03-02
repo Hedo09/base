@@ -6,4 +6,4 @@ dist: trusty
 jdk: oraclejdk8
 
 script:
- - ./gradl build --scan -s
+ - ./gradlew build --scan -s
