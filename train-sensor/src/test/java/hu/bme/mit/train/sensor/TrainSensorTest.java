@@ -6,9 +6,13 @@ import hu.bme.mit.train.interfaces.TrainUser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+
 import static org.mockito.Mockito.*;
 
 public class TrainSensorTest {
+
+    @Mock
     TrainUser user;
     TrainController controller;
     TrainSensor sensor;
@@ -17,9 +21,8 @@ public class TrainSensorTest {
     public void before() {
         user = mock(TrainUser.class);
         controller = mock(TrainController.class);
-        sensor = mock(TrainSensor.class);
+        sensor = new TrainSensorImpl(controller,user);
     }
-
 
     @Test
     public void AlarmToTrue500() {
@@ -34,6 +37,13 @@ public class TrainSensorTest {
     @Test
     public void AlarmToTrueNegativ() {
         sensor.overrideSpeedLimit(-10);
+        verify(user, times(1)).setAlarmState(true);
+    }
+
+    @Test
+    public void Rule50Test()  {
+        when(controller.getReferenceSpeed()).thenReturn(42);
+        sensor.overrideSpeedLimit(20);
         verify(user, times(1)).setAlarmState(true);
     }
 }
